@@ -1,6 +1,8 @@
+import ReactDOM from "react-dom";
+
 import styles from "./BackDrop.module.css";
 
-const BackDrop = (props) => {
+const BackDropOverlay = (props) => {
   return (
     <div
       className={`${styles.backdrop} ${props.className || ""}`}
@@ -8,6 +10,13 @@ const BackDrop = (props) => {
     >
       {props.children}
     </div>
+  );
+};
+
+const BackDrop = (props) => {
+  return ReactDOM.createPortal(
+    <BackDropOverlay onClick={props.onClick} children={props.children} />,
+    document.getElementById("overlay-root")
   );
 };
 

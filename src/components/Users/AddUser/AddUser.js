@@ -56,7 +56,7 @@ const UserForm = (props) => {
   );
 
   return (
-    <div>
+    <>
       {errorModal}
       <Card className={styles["user-form"]}>
         <form onSubmit={addUserHandler}>
@@ -77,7 +77,7 @@ const UserForm = (props) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </>
   );
 };
 
